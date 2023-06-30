@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  ImageBackground,
+} from "react-native";
+import Cafe from "./components/Cafe";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ImageBackground
+      source={{
+        uri: "https://i.pinimg.com/564x/c9/47/b9/c947b9b278bde3cd154b62673ac4bb26.jpg",
+      }}
+      resizeMode="cover"
+      style={styles.bgStyle}
+    >
+      <View style={styles.container}>
+        <Cafe />
+        <Footer />
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    position: "relative",
+  },
+  bgStyle: {
+    flex: 1,
+    justifyContent: "center",
   },
 });
